@@ -57,7 +57,7 @@ class handler(BaseHTTPRequestHandler):
                 print(result["url"])
 
             # final format should be "Products available: " + list of product information
-            message = {"results":  results}
+            message = {"results":  results[0]["name"]}
         else:
             message = {"results":  "Enter a query"}
         
