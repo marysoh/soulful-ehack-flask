@@ -69,7 +69,8 @@ class handler(BaseHTTPRequestHandler):
         if "query" in dic:
             # construct search query to narrow options to singapore supermarkets only
             # ensure that search results url's include fairprice website and at the product details page
-            search_query = "+https://www.fairprice.com.sg +product +" + dic["query"] 
+            query = str(dic["query"])
+            search_query = "site:https://www.fairprice.com.sg/product " + query
             results = self.search(search_query)
             formatted_results = "Products available:\n"
             for result in results:
