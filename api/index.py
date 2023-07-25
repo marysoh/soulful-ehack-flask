@@ -31,7 +31,7 @@ class handler(BaseHTTPRequestHandler):
             # pprint(response.json())
 
             # can modify number of search results to return based on the speed of web scraping
-            return search_results["webPages"]["value"][0:5]
+            return search_results["webPages"]["value"][0:3]
         except Exception as ex:
             raise ex
             
