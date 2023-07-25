@@ -72,7 +72,7 @@ class handler(BaseHTTPRequestHandler):
             query = str(dic["query"])
             search_query = "site:https://www.fairprice.com.sg/product " + query
             results = self.search(search_query)
-            formatted_results = "Products available:\n"
+            formatted_results = ""
             for result in results:
                 ingredients = self.web_scrape(result["url"])
                 formatted_results += "Name: " + result["name"] + "\nIngredients in HTML form:\n" + ingredients + "\nURL to product details: " + result["url"] + "\n\n"
